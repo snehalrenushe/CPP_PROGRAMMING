@@ -3,7 +3,7 @@
 /*
                 1] If only one student has done these project then you accept and display only Roll no,Name and Project Name.
                 2] If two students have done these project then you accept and display Roll no and name of first student,Roll no and name of second student and project name.
-                3] Using these Application Only Techer can Search,Update and Count no of projects entered.
+                3] Using these Application Only Teacher can Search,Update and Count no of projects entered.
                 4] Teacher who wants to Use these Application you must first Login with the Correct Password and UserName.
                 5] Students can only Accept and display details.
 
@@ -31,6 +31,7 @@ class Project
             char H_Name2[15];          // Holder Name of second student
             char Project_Name[30];     // Project Name
             static int P_Cnt;             // Declaration of Static Variable
+
 
     public:
             Project();             // Default Constructor
@@ -333,7 +334,7 @@ void Project :: Update_Project_Details()   // Definition of update project detai
         cout << " \n\t -1. ROLL NO OF FIRST STUDENT  \n\t -2. NAME OF FIRST STUDENT  \n\t -3. ROLL NO OF SECOND STUDENT  \n\t -4. NAME OF SECOND STUDENT \n\t -5. PROJECT NAME  \n\t -6. EXIT "  << endl;
 
         cout << "\n ===============================********===================================="<< endl;
-        cout << "\n Enter Choice = " << endl;
+        cout << "\n Enter Choice = ";
 
         cin >> Choice;
 
@@ -407,7 +408,8 @@ int main()
     int j = 0,m = 0,x=0;
 
     UP:
-        system("cls");
+
+    system("cls");
     cout << " \n\t -1. FOR STUDENT  \n\t -2. FOR TEACHER \n\t -3. LOG OUT "<< endl;
 
     cout << " \n\t PLEASE ENTER YOUR CHOICE => ";
@@ -448,7 +450,7 @@ int main()
 
                     else if(m == 1)
                     {
-                        for(i = 0 ; i < 2 ; i++)
+                        for(i = 0 ; i < Count ; i++)
                         {
                             Obj[i].Accept_Project_Details();
                         }
@@ -457,7 +459,7 @@ int main()
 
                     else if(m == 2)
                     {
-                        for(i = 0 ; i < 2 ; i++)
+                        for(i = 0 ; i < Count ; i++)
                         {
                             Obj[i].Display_Project_Details();
                         }
@@ -506,7 +508,7 @@ int main()
 
                             cout << "\n\t -1. SEARCH PROJECT BY ID  \n\t -2. UPDATE PROJECT BY ID  \n\t -3. DISPLAY PROJECT BY ID   \n\t -4. EXIT " << endl;
 
-                            cout << "\n Please Enter Valid Option " << endl;
+                            cout << "\n Please Enter Valid Option => ";
 
                             cin >> Choice;
 
@@ -544,7 +546,7 @@ int main()
                                    break;
 
                             case 3:
-                                  cout << "\n Enter Product ID Which Details should be display = ";
+                                  cout << "\n Enter Project ID Which Details should be display = ";
                                   cin >> ID;
 
                                   Display_Project_By_ID(ID);
@@ -604,7 +606,12 @@ int main()
 
                     else if(k == 2)
                     {
-                        Obj[i].Accept_Project_Details();
+                        cout << "\n Entering Students Capacity is Exhausted...." << endl;
+
+                        cout << "\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+
+                        cout << "\n Press any key to go..... " << endl;
+
                         goto up;
                     }
 
