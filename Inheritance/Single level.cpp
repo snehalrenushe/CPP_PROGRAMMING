@@ -7,12 +7,12 @@ class Karad                               ///Base class
      public:
          int a,b;
 
-         Karad()
+         Karad()            //default Constructor
          {
              cout<<"\n Karad :: Constructor..."<<endl;
          }
 
-         ~Karad()
+         ~Karad()           // destructor
          {
              cout<<"\n Karad :: Constructor..."<<endl;
              cout<<"value =" <<a<<" "<<b;
