@@ -21,6 +21,7 @@ int main()
     cout << "Now,new count of dogs are : " << Total_animals << endl;
 
     getch();
+
     return 0;
 
 }
