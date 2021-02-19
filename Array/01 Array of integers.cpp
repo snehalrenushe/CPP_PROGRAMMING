@@ -18,7 +18,7 @@ int main()
     cout << i[1] << endl;
     cout << i[2] << endl;
 
-    /// cout << "Bad idea : " << i[3] << endl;
+    //cout << "Will not work : " << i[3] << endl;
 
     getch();
     return 0;
