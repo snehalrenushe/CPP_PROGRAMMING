@@ -7,18 +7,8 @@ class sem_1             ///Base Class 2
     public:
         int m1 = 0 , m2 = 0;
 
-        sem_1()         //Constructor
-        {
-            cout << "\n ^^^^^^^^^^^^^ Information of Marks is given below... ^^^^^^^^^^^^^ " << endl;
-        }
-
         void Accept_Marks1();       //Declaration of Member Function
         void Display_Marks1();      //Declaration of Member Function
-
-        ~sem_1()        //Destructor
-        {
-            cout << "\n ^^^^^^^^^ Information of Marks is successfully displayed ^^^^^^^^^ " << endl;
-        }
 
 };
 
@@ -88,6 +78,8 @@ class result : public sem_1,public sem_2        ///Derived Class
 
                 cout << "\n Total Marks of given Subject => " << total << endl;
                 cout << "\n Percentage of given Subject => " << per << endl;
+
+                cout << "\n ================================================================= " << endl;
             }
 
 };

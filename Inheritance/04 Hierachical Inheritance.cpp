@@ -2,58 +2,97 @@
 #include<iostream>
 using namespace std;
 
-class Student                             ///Base class
+class Student       ///Base class
 {
-    protected:
-    int Roll_No = 0;
     public:
-        void Accept_Details(int R_No)
-        {
-            cout << "\n Roll no of student is : " << R_No << endl;
+        int Roll_no;
+        char Name[20];
 
-            Roll_No = R_No;
+        void Accept_Student_Details()           //Definition of Member Function
+        {
+           cout << "\n\n ============================================================" << endl;
+           cout << "\n Enter a Roll number => ";
+           cin >> Roll_no;
+           cout<<"\n Enter a Name => ";
+           cin >> Name;
         }
-};
-
-class Student1 : public Student                ///derived class 1
-{
-    public:
-        int Accept_Details1(int R_no)
+        void Display_Student_Details()      //Definition of Member Function
         {
-            Roll_No = R_no;
-
-            return R_no;
+           cout << "\n Roll no is : " << Roll_no;
+           cout << "\n Name : " << Name;
         }
 
 };
-
-class Student2 : public Student                 ///derived class 2
+class Sem_1 : public Student        ///Derived class 1
 {
-    public:
-        int Accept_Details1(int r_no)
-        {
-            Roll_No = r_no;
+   public:
+       int m1,m2,m3;
+       float total,per;
 
-            return r_no;
-        }
+       void Accept_Sem_1_Marks()        //Definition of Member Function
+       {
+          Student :: Accept_Student_Details();
+          cout << "\n Enter a marks => ";
+          cin >> m1 >> m2 >> m3;
+
+          total = m1 + m2 + m3;
+          per = total / 3;
+
+       }
+       void Display_Sem_1_Marks()       //Definition of Member Function
+       {
+          Student :: Display_Student_Details();
+
+          cout << "\n Marks of 3 subjects are : " << m1 << " " << m2 << " " << m3;
+
+          cout << "\n Total is : " << total;
+          cout << "\n Percentage is : " << per;
+       }
 
 };
 
-// main function
+class Sem_2 : public Student            ///Derived class 2
+{
+   public:
+       int m1,m2,m3;
+       float total,per;
 
+       void Accept_Sem_2_Marks()        //Definition of Member Function
+       {
+          Student :: Accept_Student_Details();
+          cout << "\n Enter a marks => ";
+          cin >> m1 >> m2 >> m3;
+
+          total = m1 + m2 + m3;
+          per = total / 3;
+
+       }
+       void Display_Sem_2_Marks()       //Definition of Member Function
+       {
+          Student :: Display_Student_Details();
+          cout << "\n Marks of 3 subjects are : " << m1 << " " << m2 << " " << m3;
+
+          cout << "\n Total is : " << total;
+          cout << "\n Percentage is : " << per << endl;
+       }
+
+};
+//main Function
 int main()
 {
-    Student1 stud1;
-    Student2 stud2;
+    Sem_1 obj1;         //object 1
+    Sem_2 obj2;         //object 2
 
-    stud1.Accept_Details(1);
-    stud2.Accept_Details(2);
-
-    getch();
-
-    cout << "\n Roll no of Student is : " << stud1.Accept_Details1(3) << endl;
-    cout << "\n Roll no of student is : " << stud2.Accept_Details1(4) << endl;
+    obj1.Accept_Sem_1_Marks();
+    cout << "\n^^^^^^^^^Displaying First Semester Details ^^^^^^^^^^" << endl;
+    obj1.Display_Sem_1_Marks();
 
     getch();
+
+    obj2.Accept_Sem_2_Marks();
+    cout << "\n^^^^^^^^^Displaying Second Semester Details ^^^^^^^^^^" << endl;
+    obj2.Display_Sem_2_Marks();
+
+    getche();
     return 0;
 }

@@ -2,99 +2,78 @@
 #include<iostream>
 using namespace std;
 
-class A1                             ///Base class
+class Student           ///Base class
 {
-     public:
-         int a,b;
+    public:
+        int Roll_no;
+        char Name[20];
 
-         A1()       // Constructor
-         {
-             cout << "\n A1 :: Constructor..." << endl;
-         }
+        void Accept_Student_Details()       //Definition of member function
+        {
+           cout << "\n Enter a Roll number => ";
+           cin >> Roll_no;
+           cout<<"\n Enter a Name => ";
+           cin >> Name;
+        }
+        void Display_Student_Details()      //Definition of member function
+        {
+           cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
 
-         ~A1()      //Destructor
-         {
-             cout << "\n A1 :: Destructor..." << endl;
-             cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
-         }
+           cout << "\n Roll no is : " << Roll_no;
+           cout << "\n Name : " << Name;
+        }
 
-         void fun()     //Member Function
-         {
-             a = 100;
-             b = 200;
-             cout << " Value of a and b is : " << a << " " << b << endl;
-         }
 };
-
-class D1 : public A1                 ///derived class 1
+class Marks : public Student        ///Derived class of base class student
 {
-     public:
-               int x;
+   public:
+       int m1,m2,m3;
 
-               D1()     //Constructor
-               {
-                   cout << "\n D1 :: Constructor..." << endl;
-               }
+       void Accept_Marks()          //Definition of member function
+       {
+          Student :: Accept_Student_Details();
+          cout << "\n Enter a marks => ";
+          cin >> m1 >> m2 >> m3;
 
-               ~D1()       //Destructor
-               {
-                   cout << "\n D1 :: Destructor..." << endl;
-               }
+       }
+       void Display_Marks()         //Definition of member function
+       {
+          Student :: Display_Student_Details();
+          cout << "\n Marks of 3 subjects are : " << m1 << " " << m2 << " " << m3;
 
-               void gun()       //Member Function
-               {
-                   D1 :: fun();
-                   x = 300;
-                   cout << "\n Value of x is : " << x << endl;
-               }
-
+          cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
+       }
 
 };
 
-class D2 : public D1                 ///derived class 2
+class Result : public Marks         ///Derived class of base class Marks
 {
-     public:
-               int i,j;
+    public:
+        float total,per;
 
-               D2()     //Constructor
-               {
-                   cout << "\n D2 :: Constructor..." << endl;
-               }
+        void Display_Result()       //Definition of member function
+        {
+            Marks :: Accept_Marks();
+            Marks :: Display_Marks();
 
-               ~D2()        //Destructor
-               {
-                   cout << "\n D2 :: Destructor..." << endl;
-               }
+            total = m1 + m2 + m3;
 
-               void sun()       //Member Function
-               {
-                   D2 :: gun();
-                   i = 400;
-                   j = 500;
+            per = total / 3;
 
-                   cout << "\n Value of i and j : " << i << " " << j << endl;
+            cout << "\n Total is : " << total;
+            cout << "\n Percentage is : " << per;
 
-                   cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
-               }
-
+            cout << "\n============================================================" << endl;
+        }
 
 };
-
-// main function
-
+//main function
 int main()
 {
-    D2 obj;     //Object
-
-    cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl;
-
-    cout << endl << "   Size of given Object is : " << sizeof(obj) << endl;
-    getche();
-
-    cout << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n" << endl;
-
-    obj.sun();
+    Result obj;
+    obj.Display_Result();
 
     getch();
     return 0;
 }
+
