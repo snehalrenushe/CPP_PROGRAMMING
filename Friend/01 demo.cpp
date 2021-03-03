@@ -3,12 +3,12 @@ using namespace std;
 #include<conio.h>
 #include<iostream>
 
-class My_Friend
+class My_Friend     ///class name
 {
     public:
         int i;
 
-        My_Friend()
+        My_Friend()         //constructor
         {
             this->i = 50;
             this->j = 10;
@@ -16,7 +16,7 @@ class My_Friend
             cout << endl << "Inside Default Constructor !!!!" << endl;
         }
 
-        My_Friend(int Num,int No)
+        My_Friend(int Num,int No)       //parameterized constructor
         {
             this->i = Num;
             this->k = No;
@@ -24,20 +24,20 @@ class My_Friend
             cout << endl << "Inside Parameterized 1 Constructor !!" << endl;
         }
 
-        My_Friend(int No1,int No2,int No3)
+        My_Friend(int No1,int No2,int No3)          //parameterized constructor
         {
             this->i = No1;
             this->k = No2;
             this->j = No3;
             cout << endl << "Inside Parameterized 2 Constructor !!" << endl;
         }
-        My_Friend(My_Friend &Obj)
+        My_Friend(My_Friend &Obj)       //copy constructor
         {
             this->i = Obj.i;
             cout << endl << "Inside Copy Constructor !!! " << endl;
         }
 
-        ~My_Friend()
+        ~My_Friend()        //destructor
         {
             cout << endl << "Inside Destructor !!!!" << endl;
         }
@@ -76,6 +76,7 @@ class My_Friend
 
 
 };
+//main function
 int main()
 {
     int Res = 0 ;
