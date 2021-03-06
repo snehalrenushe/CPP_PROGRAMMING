@@ -1,6 +1,5 @@
 
 ///--------------------*****^^^^^^^^^*******^^^^^^^^^***** INFORMATION ABOUT PROJECT DETAILS ********^^^^^^^********^^^^^^^^^^*******---------------------
-
 /*
                 1] If only one student has done these project then you accept and display only Roll no,Name and Project Name.
                 2] If two students have done these project then you accept and display Roll no and name of first student,Roll no and name of second student and project name.
@@ -9,7 +8,6 @@
                 5] Students can only Accept and display details.
 
 */
-
 ///*********************************************************************************************************************************************************
 
 #include<stdio.h>
@@ -25,7 +23,6 @@ using namespace std;
 class Project
 {
     private:
-
             int H_Cnt = 0;          // Holder_Count
             int P_ID = 0;            // Project_ID
             int Roll_No1 = 0;          // Roll no of first Student
@@ -37,7 +34,6 @@ class Project
 
 
     public:
-
             Project();             // Default Constructor
 
             Project(int,char[],int,char[],char[]);         // Parameterized Constructor
@@ -78,13 +74,13 @@ int Project :: login()                    // Definition of login member function
             cout << " \n  \t Enter Valid Username => " ;
             cin >> UserName;
 
-            if(strcmp(UserName,"snehal") == 0)          // for Comparison
+            if(strcmp(UserName,"admin") == 0)          // for Comparison
             {
                 while(1)
                 {
                     cout << " \n  \t Enter Valid Password => ";
                     cin >> Password;
-                    if (strcmp(Password, "1510snehal") == 0)
+                    if (strcmp(Password, "admin123") == 0)
                     {
                         cout << "\n   ############# LOGIN SUCCESSFUL !!!! #############" << endl;
                         cout << "\n==============================================================";
