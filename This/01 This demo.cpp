@@ -1,7 +1,6 @@
 #include<conio.h>
 #include<iostream>
 #include<sstream>
-
 using namespace std;
 
 class Person
@@ -42,6 +41,7 @@ string Person::toString()
     ss << age;
 
     return ss.str();
+
 }
 
 int main()
@@ -52,7 +52,6 @@ int main()
 
     cout << person2.toString() << "; memory location: " << &person2 << endl;
     cout << person3.toString() << "; memory location: " << &person3 << endl;
-
 
     return 0;
 }
