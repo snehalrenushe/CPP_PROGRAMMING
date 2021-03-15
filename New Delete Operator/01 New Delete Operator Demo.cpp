@@ -1,6 +1,8 @@
 /*
+
    new => For Dynamic Memory Allocation / malloc in c
    delete => For Dynamic Memory Deallocation Using New Operator / free in c
+
 */
 
 
