@@ -42,6 +42,6 @@ int main()
     obj.Substraction(12.8 , 7.2);
     obj.Modulo(500 , 7);
 
-    getche();
+    getch();
     return 0;
 }
