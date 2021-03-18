@@ -23,11 +23,13 @@ class demo
     friend void fun();
 
 };
+
 void fun()
 {
     demo obj;
     cout << obj.pub << " \t " << obj.pri << " \t " << obj.pro << endl;
 }
+
 int main()
 {
     fun();
