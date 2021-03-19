@@ -14,6 +14,7 @@ int main()
     {
         cout << "Element of index " << i << " : " << numberarray[i] << endl;
     }
+
     getch();
     return 0;
 }
