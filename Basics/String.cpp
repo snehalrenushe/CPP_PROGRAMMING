@@ -14,7 +14,6 @@ int main()
 
     cout << text3 << endl;
 
-
     getch();
     return 0;
 
