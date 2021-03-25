@@ -30,7 +30,6 @@ class demo
         }
 
 };
-
 int demo::j = 150;
 
 int main()
@@ -56,4 +55,5 @@ int main()
     demo :: gun();
 
     return 0;
+
 }
