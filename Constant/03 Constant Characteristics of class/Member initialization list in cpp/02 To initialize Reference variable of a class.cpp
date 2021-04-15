@@ -17,6 +17,7 @@ class demo
         }
 
 };
+
 int main()
 {
     int a = 101;
