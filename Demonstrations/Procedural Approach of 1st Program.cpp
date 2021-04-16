@@ -5,7 +5,13 @@ using namespace std;
 class Calculator
 {
     public:
+
           int No1,No2,Ans;        /// Data Members or characteristics or class variables
+
+          Calculator()
+          {
+              cout << "\nInside Default Contructor....." << endl;
+          }
 
           void Add();             /// Member Function Add or Behaviors Declaration
 
@@ -34,11 +40,11 @@ int main()
 
     obj1.Add();
 
-    cout << "Addition is = "<< obj1.Ans <<endl;
+    cout << "\nAddition is = "<< obj1.Ans <<endl;
 
     obj2.Sub();
 
-    cout << "Substraction is =" <<obj2.Ans <<endl;
+    cout << "\nSubstraction is =" <<obj2.Ans <<endl;
 
     getch();
     return 0;
