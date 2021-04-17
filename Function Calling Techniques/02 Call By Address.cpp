@@ -9,11 +9,11 @@ int main()
 {
     int No = 10;
 
-    cout << No << endl;
+    cout << "Value Before Call : " << No << endl;
 
     Address(&No);
 
-    cout << No << endl;
+    cout << "Value After Call : " << No << endl;
 
     getch();
     return 0;
