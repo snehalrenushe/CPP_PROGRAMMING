@@ -1,4 +1,4 @@
-fffffffffffffffffffffffffrrrrrrrrrrrrrrrrrrrrrrrrrffffrusing namespace std;
+using namespace std;
 #include<stdio.h>
 #include<conio.h>
 #include<iostream>
