@@ -58,7 +58,7 @@ int main()
     const Product obj1(776);
 
    // obj1.N1++;               // error : it cannot change its characteristics
-    //obj1.N2--;
+   //obj1.N2--;
 
     obj1.Edit();
    // obj1.Modify();                // error : cant call not constant member function
