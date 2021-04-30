@@ -1,43 +1,120 @@
-using namespace std;
 #include<iostream>
 #include<conio.h>
-#include<stdio.h>
+using namespace std;
 
-class hello
+class Arithmatic
 {
     public:
-        void fun();
+
+         Arithmatic()
+         {
+             cout << "\n Inside Arithmatic Default Constructor!!!! " << endl;
+         }
+
+         ~Arithmatic()
+         {
+             cout << "\n Inside Arithmatic Destructor !!! " << endl;
+         }
+
+         void operate(int No1 , int No2);         /// Naked function
 };
 
-class demo
+class calculator
 {
-    public:
-        int pub;
-        demo()
+    private:                                            //private access specifier
+        int sum , mult;
+
+        void Addition()                 //Member function
         {
-            pub = 10;
-            pri = 20;
-            pro = 30;
+            sum = N1 + N2;
         }
 
-    private:
-        int pri;
+        void Multiplication()
+        {
+            mult = N1 * N2;
+        }
 
-    protected:
-        int pro;
+    protected:              //protected access specifier
+        int sub , div , mod;
 
-    friend void hello :: fun();
+        void substraction()         // member function
+        {
+            sub = N1 - N2;
+        }
+
+        void division()
+        {
+            div = N1 / N2;
+        }
+
+        void modulo()
+        {
+            mod = N1 % N2;
+        }
+
+    public:             // public access specifier
+        int N1 , N2;
+
+        calculator()            // default constructor
+        {
+            N1 = N2 = sum = sub = 0;
+
+            cout << "\n Inside calculator Default Constructor!!! " << endl;
+        }
+
+        ~calculator()               //destructor
+        {
+            cout << "\n Inside calculator Destructor!!! " << endl;
+        }
+
+        friend void Arithmatic :: operate(int , int);         /// Declaration Friend To Member function of another class
 
 };
-void hello :: fun()
+
+void Arithmatic :: operate(int Num1,int Num2)
 {
-    demo obj;
-    cout << obj.pub << " \t " << obj.pri << " \t " << obj.pro << endl;
+            calculator obj;
+
+            obj.N1 = Num1;
+            obj.N2 = Num2;
+
+            obj.Addition();
+
+            cout << "\n Addition of given two numbers are = " << obj.sum << endl;
+
+            obj.substraction();
+
+            cout << "\n Subtraction of given two numbers are = " << obj.sub << endl;
+
+            obj.division();
+
+            cout << "\n Division of given two numbers are = " << obj.div << endl;
+
+            obj.Multiplication();
+
+            cout << "\n Multiplication of given two numbers are = " << obj.mult << endl;
+
+            obj.modulo();
+
+            cout << "\n Modulo of given two numbers are = " << obj.mod << endl;
+
 }
+
 int main()
 {
-    hello hobj;
-    hobj.fun();
+    int Num1 = 0 , Num2  = 0;
+    cout << "\n Enter Two numbers: ";
 
+    cin >> Num1 >> Num2;
+
+    Arithmatic Arith;
+
+    Arith.operate(Num1,Num2);
+
+    getch();
+
+    cout << "\n Back to Main() !!!! " << endl;
+
+    getch();
     return 0;
 }
