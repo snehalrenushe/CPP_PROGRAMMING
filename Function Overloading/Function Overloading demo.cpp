@@ -25,6 +25,7 @@ class Demo
 
             cout << "\n-------------------------------------------------" << endl;
         }
+
         void Modulo(int x , int y)
         {
             int Mod;
