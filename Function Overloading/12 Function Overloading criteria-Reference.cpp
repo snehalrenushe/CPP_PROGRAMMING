@@ -1,4 +1,4 @@
-/// Reference is AMBIGIOUS and declaration is Allowed
+    /// Reference is AMBIGIOUS and declaration is Allowed
 
 #include<stdio.h>
 #include<conio.h>
