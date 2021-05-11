@@ -1,4 +1,4 @@
-/// Pointer is Allowed
+    /// Pointer is Allowed
 
 #include<stdio.h>
 #include<conio.h>
