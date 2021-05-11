@@ -1,4 +1,4 @@
-///static behavior is not applicable
+    ///static behavior is not applicable
 
 #include<stdio.h>
 #include<conio.h>
