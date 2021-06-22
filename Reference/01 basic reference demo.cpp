@@ -42,7 +42,7 @@ int main()
     cout << *N2 << endl;            //100
     cout << *N3 << endl;            //100
 
-//    cout << "Value of Num variable is : " << *Num << endl;
+//  cout << "Value of Num variable is : " << *Num << endl;
 
     cout << "Value of Array variable is : " << Arr[2];
 
