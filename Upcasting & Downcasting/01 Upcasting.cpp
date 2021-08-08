@@ -72,7 +72,7 @@ int main()
     Derived dobj;
 
     Base *bptr = &dobj;             // Upcasting : Base pointer points address of Derived.
-  //Derived *dptr = &bobj;          Downcasting : Derived pointer points address of Base.
+    //Derived *dptr = &bobj;          Downcasting : Derived pointer points address of Base.
 
     getch();
     return 0;
