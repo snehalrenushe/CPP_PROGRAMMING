@@ -5,7 +5,7 @@ using namespace std;
 
 #define pi 3.14
 
-class Area_Rectangle
+class Rectangle
 {
     private:
         int length = 0,breadth = 0;
@@ -13,12 +13,12 @@ class Area_Rectangle
     public:
         Accept();
         Find_Area();
-        Area_Rectangle();
-        ~Area_Rectangle();
+        Rectangle();
+        ~Rectangle();
 
 };
 
-class Area_Square
+class Square
 {
     private:
         int side = 0;
@@ -26,11 +26,11 @@ class Area_Square
     public:
         Accept();
         Find_Area();
-        Area_Square();
-        ~Area_Square();
+        Square();
+        ~Square();
 };
 
-class Area_Circle
+class Circle
 {
     private:
         int radius = 0;
@@ -38,11 +38,11 @@ class Area_Circle
     public:
         Accept();
         Find_Area();
-        Area_Circle();
-        ~Area_Circle();
+        Circle();
+        ~Circle();
 };
 
-class Area_Ellipse
+class Ellipse
 {
     private:
         int rad1 = 0,rad2 = 0;
@@ -50,109 +50,145 @@ class Area_Ellipse
     public:
         Accept();
         Find_Area();
-        Area_Ellipse();
-        ~Area_Ellipse();
+        Ellipse();
+        ~Ellipse();
 };
 
-int Area_Rectangle :: Accept()
+class Triangle
 {
-    cout << " \nEnter the value of length and breadth =>";
+    private:
+        int base = 0,height = 0;
+
+    public:
+        Accept();
+        Find_Area();
+        Triangle();
+        ~Triangle();
+
+};
+
+int Rectangle :: Accept()
+{
+    cout << " \nEnter the value of length and breadth => ";
     cin >> this->length >> this->breadth;
 }
 
-int Area_Rectangle :: Find_Area()
+int Rectangle :: Find_Area()
 {
-     cout << " \nArea of rectangle is " << length * breadth;
+     cout << " \nArea of Rectangle  is " << length * breadth;
 
      return 0;
 }
 
-Area_Rectangle :: Area_Rectangle()
+Rectangle  :: Rectangle ()
 {
-    cout << " \nInside Default Rectangle Constructor!!!";
+    cout << " \nInside Default Rectangle  Constructor!!!";
 }
 
-Area_Rectangle :: ~Area_Rectangle()
+Rectangle  :: ~Rectangle ()
 {
     cout << " \nInside Rectangle Destructor!!!\n";
 }
 
-int Area_Square :: Accept()
+int Square :: Accept()
 {
-    cout << " \nEnter the value of length =>";
+    cout << " \nEnter the value of length => ";
     cin >> this->side;
 }
 
-int Area_Square :: Find_Area()
+int Square :: Find_Area()
 {
      cout << " \nArea of Square is " << side * side;
 
      return 0;
 }
 
-Area_Square :: Area_Square()
+Square :: Square()
 {
     cout << " \nInside Default Square Constructor!!!";
 }
 
-Area_Square :: ~Area_Square()
+Square :: ~Square()
 {
     cout << " \nInside Square Destructor!!!";
 }
 
-int Area_Circle :: Accept()
+int Circle :: Accept()
 {
-    cout << " \nEnter the value of radius of circle =>";
+    cout << " \nEnter the value of radius of circle => ";
     cin >> this->radius;
 }
 
-int Area_Circle :: Find_Area()
+int Circle :: Find_Area()
 {
      cout << " \nArea of Circle is " << pi * radius * radius;
 
      return 0;
 }
 
-Area_Circle :: Area_Circle()
+Circle :: Circle()
 {
     cout << " \nInside Default Circle Constructor!!!";
 }
 
-Area_Circle :: ~Area_Circle()
+Circle :: ~Circle()
 {
     cout << " \nInside Circle Destructor!!!";
 }
 
-int Area_Ellipse :: Accept()
+int Ellipse :: Accept()
 {
-    cout << " \nEnter the radius of ellipse =>";
+    cout << " \nEnter the radius of ellipse => ";
     cin >> this->rad1 >> this->rad2;
 }
 
-int Area_Ellipse :: Find_Area()
+int Ellipse :: Find_Area()
 {
      cout << " \nArea of Ellipse is " << rad1 * rad2 * pi;
 
      return 0;
 }
 
-Area_Ellipse :: Area_Ellipse()
+Ellipse :: Ellipse()
 {
     cout << " \nInside Default Ellipse Constructor!!!";
 }
 
-Area_Ellipse :: ~Area_Ellipse()
+Ellipse :: ~Ellipse()
 {
-    cout << " \n\nInside Ellipse Destructor!!!";
+    cout << " \nInside Ellipse Destructor!!!";
 }
 
+int Triangle :: Accept()
+{
+    cout << " \nEnter the value of Base and Height => ";
+    cin >> this->base >> this->height;
+}
+
+int Triangle :: Find_Area()
+{
+     cout << " \nArea of Triangle is " << (base * height)/2;
+
+     return 0;
+}
+
+Triangle :: Triangle()
+{
+    cout << " \nInside Default Triangle Constructor!!!";
+}
+
+Triangle :: ~Triangle()
+{
+    cout << " \n\nInside Triangle Destructor!!!";
+}
 
 int main()
 {
-    Area_Rectangle obj1;
-    Area_Square obj2;
-    Area_Circle obj3;
-    Area_Ellipse obj4;
+    Rectangle obj1;
+    Square obj2;
+    Circle obj3;
+    Ellipse obj4;
+    Triangle obj5;
 
     int choice = 0;
     char ch = '\0';
@@ -160,7 +196,7 @@ int main()
     while(1)
     {
         system("cls");
-        cout << "\n Select Your Choice => \n\t 1.Rechangle \n\t 2.Square \n\t 3.Circle \n\t 4.Ellipse \n\t 5.Exit \n";
+        cout << "\n Select Your Choice => \n\t 1.Rechangle \n\t 2.Square \n\t 3.Circle \n\t 4.Ellipse \n\t 5.Triangle \n\t 6.Exit \n";
 
         cout << " Enter Your Choice : ";
         cin >> choice;
@@ -204,6 +240,17 @@ int main()
                  break;
 
             case 5:
+                 obj5.Accept();
+                 obj5.Find_Area();
+
+                 cout << "\n\n Press any key to go back to main Menu : ";
+                 getch();
+                 system("cls");
+                 break;
+
+
+
+            case 6:
                  fflush(stdin);
                  cout << "\n Are you Sure ??? \n Do You Really Want to Quit (Yes/No) ";
                  ch = getchar();
@@ -221,7 +268,7 @@ int main()
                   cout << "\n Press Any Key To go back to main menu :";
         }
 
-        if(choice == 5)
+        if(choice == 6)
          {
              cout << "\n Thanks for using Our Application !!!\n";
              break;
