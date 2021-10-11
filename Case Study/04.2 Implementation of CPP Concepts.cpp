@@ -147,6 +147,7 @@ Square :: ~Square()
 {
     cout << "\nInside Destructor of Square.";
 }
+
 int main()
 {
     Rectangle robj1;
