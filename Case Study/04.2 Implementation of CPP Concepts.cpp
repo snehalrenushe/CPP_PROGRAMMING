@@ -5,7 +5,6 @@ using namespace std;
 
 //#define pi 3.14
 
-
 class Rectangle
 {
     public:
@@ -151,8 +150,11 @@ Square :: ~Square()
 int main()
 {
     Rectangle robj1;
+    getch();
     Rectangle robj2(2,2);
+    getch();
     Rectangle robj3(robj2);
+    getch();
 
     robj1.Accept_Details();
     robj1.Area_Of_Rectangle();

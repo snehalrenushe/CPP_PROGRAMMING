@@ -57,7 +57,7 @@ Circle :: Circle(Circle &Cir)
 
 void Circle :: Accept_Details()
 {
-    cout << "\nEnter Radius of Circle : ";
+    cout << "\n\tEnter Radius of Circle : ";
     cin >> Radius;
 }
 
@@ -73,15 +73,17 @@ void Circle :: Circumference_Of_Circle()
 
 void Circle :: Display_Area()
 {
-    cout << "\n Area of Circle => ";
-    cout << "\nArea = " <<Area;
+    cout << "\n\t -----------------------";
+    cout << "\n\t| Area of Circle = " << Area << " |";
+    cout << "\n\t -----------------------";
     return;
 }
 
 void Circle :: Display_Circumference()
 {
-    cout << "\n Circumference of Circle => ";
-    cout << "\nCircum = " <<Circum;
+    cout << "\n\t ---------------------------------";
+    cout << "\n\t| Circumference of Circle = " << Circum << " |";
+    cout << "\n\t ---------------------------------";
     return;
 }
 
@@ -138,9 +140,9 @@ Rectangle :: Rectangle(Rectangle &Rect)
 
 void Rectangle :: Accept_Details()
 {
-    cout << "\nEnter length of Rectangle : ";
+    cout << "\n\tEnter length of Rectangle : ";
     cin >> len;
-    cout << "\nEnter breadth of Rectangle : ";
+    cout << "\n\tEnter breadth of Rectangle : ";
     cin >> bre;
 
 }
@@ -157,15 +159,17 @@ void Rectangle :: Perimeter_Of_Rectangle()
 
 void Rectangle :: Display_Area()
 {
-    cout << "\n Area of Rectangle => ";
-    cout << "\nArea = " <<Area;
+    cout << "\n\t ------------------------";
+    cout << "\n\t| Area of Rectangle = " << Area<< "  |";
+    cout << "\n\t ------------------------";
     return;
 }
 
 void Rectangle :: Display_Perimeter()
 {
-    cout << "\n Perimeter of Rectangle => ";
-    cout << "\nPerimeter = " << peri;
+    cout << "\n\t ----------------------------";
+    cout << "\n\t| Perimeter of Rectangle = " << peri << " |";
+    cout << "\n\t ----------------------------";
     return;
 }
 
@@ -178,12 +182,12 @@ int main()
 {
     Circle cobj1;
 
-    Circle cobj2(5.5);
-    Circle cobj3(cobj2);
+    /*Circle cobj2(5.5);
+    Circle cobj3(cobj2);*/
 
     Rectangle robj1;
-    Rectangle robj2(2,3);
-    Rectangle robj3(robj2);
+    /*Rectangle robj2(2,3);
+    Rectangle robj3(robj2);*/
 
     int choice = 0;
     char ch = '\0';
@@ -192,6 +196,7 @@ int main()
     while(1)
     {
         system("cls");
+        UP:
         cout << "\n Select Your Choice => \n\t 1.Circle \n\t 2.Rectangle  \n\t 3.Exit \n";
 
         cout << " Enter Your Choice : ";
@@ -200,9 +205,9 @@ int main()
         switch(choice)
         {
             case 1:
-                 cout << "\n Select Your Choice => \n\t 1.Area \n\t 2.Circumference  \n\t 3.Exit \n";
+                 cout << "\n\t Select Your Choice => \n\t\t 1.Area Of Circle \n\t\t 2.Circumference Of Circle  \n\t\t 3.Exit \n";
 
-                 cout << " Enter Your Choice : ";
+                 cout << " \tEnter Your Choice : ";
                  cin >> i;
 
                  switch(i)
@@ -212,9 +217,10 @@ int main()
                         cobj1.Area_Of_Circle();
                         cobj1.Display_Area();
 
-                        cout << "\n Press any key to go back to main Menu : ";
+                        cout << "\n\n Press any key to go back to main Menu : ";
                         getch();
                         system("cls");
+                        goto UP;
                         break;
 
                     case 2:
@@ -222,17 +228,22 @@ int main()
                         cobj1.Circumference_Of_Circle();
                         cobj1.Display_Circumference();
 
-                        cout << "\n Press any key to go back to main Menu : ";
+                        cout << "\n\n Press any key to go back to main Menu : ";
                         getch();
                         system("cls");
+                        goto UP;
                         break;
+
+                    case 3:
+                        system("cls");
+                        goto UP;
 
                  }
 
             case 2:
-                 cout << "\n Select Your Choice => \n\t 1.Area \n\t 2.Perimeter  \n\t 3.Exit \n";
+                 cout << "\n\t Select Your Choice => \n\t\t 1.Area Of Rectangle \n\t\t 2.Perimeter Of Rectangle \n\t\t 3.Exit \n";
 
-                 cout << " Enter Your Choice : ";
+                 cout << " \tEnter Your Choice : ";
                  cin >> j;
 
                  switch(j)
@@ -242,9 +253,10 @@ int main()
                         robj1.Area_Of_Rectangle();
                         robj1.Display_Area();
 
-                        cout << "\n Press any key to go back to main Menu : ";
+                        cout << "\n\n Press any key to go back to main Menu : ";
                         getch();
                         system("cls");
+                        goto UP;
                         break;
 
                     case 2:
@@ -252,17 +264,24 @@ int main()
                         robj1.Perimeter_Of_Rectangle();
                         robj1.Display_Perimeter();
 
-                        cout << "\n Press any key to go back to main Menu : ";
+                        cout << "\n\n Press any key to go back to main Menu : ";
                         getch();
                         system("cls");
+                        goto UP;
                         break;
+
+                    case 3:
+                        system("cls");
+                        goto UP;
 
                  }
 
 
             case 3:
+                 up:
+                 system("cls");
                  fflush(stdin);
-                 cout << "\n Are you Sure ??? \n Do You Really Want to Quit (Yes/No) ";
+                 cout << "\n\n Are you Sure ??? \n Do You Really Want to Quit (Y/N) ";
                  ch = getchar();
 
                  if(ch == 'N' || ch == 'n')
@@ -270,7 +289,15 @@ int main()
                       choice = -1;
                       system("cls");
                  }
-                 break;
+                 else if(ch == 'Y' || ch == 'y')
+                 {
+                    break;
+                 }
+                 else
+                 {
+                     goto up;
+                 }
+                 //break;
 
             default:
 
